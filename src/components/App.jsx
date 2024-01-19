@@ -52,6 +52,10 @@ export const App = () => {
     );
   };
 
+  const changeFilter = (e) => {
+    setFilter(e.target.value);
+  };
+  
   const filterContacts = () => {
     const normalizeFilter = filter.trim().toLowerCase();
     return contacts.filter((contact) =>
@@ -66,7 +70,7 @@ export const App = () => {
       <h2>Contacts</h2>
       {contacts.length > 0 ? (
         <>
-          <Filter value={filter} onChangeFilter={setFilter} />
+          <Filter value={filter} onChangeFilter={changeFilter} />
           <ContactList
             contacts={filterContacts()}
             onRemoveContact={removeContact}
