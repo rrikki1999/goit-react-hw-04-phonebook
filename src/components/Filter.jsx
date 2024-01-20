@@ -1,9 +1,8 @@
-import { Component } from 'react';
+
 import { nanoid } from 'nanoid';
 
-export class Filter extends Component {
-  render() {
-    const { value, onChangeFilter } = this.props;
+export const Filter = ({ value, onChangeFilter }) => {
+  
     return (
       <label htmlFor={nanoid()}>
         Find contacts by name
@@ -16,4 +15,21 @@ export class Filter extends Component {
       </label>
     );
   }
-}
+
+
+// export class Filter extends Component {
+//   render() {
+//     const { value, onChangeFilter } = this.props;
+//     return (
+//       <label htmlFor={nanoid()}>
+//         Find contacts by name
+//         <input
+//           value={value}
+//           type="text"
+//           placeholder="find contact"
+//           onChange={onChangeFilter}
+//         />
+//       </label>
+//     );
+//   }
+// }
